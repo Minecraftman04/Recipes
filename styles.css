@@ -1,0 +1,273 @@
+:root {
+  color-scheme: light;
+  --bg: #fff8ef;
+  --surface: #ffffff;
+  --surface-strong: #fff2d9;
+  --text: #24170f;
+  --muted: #725b45;
+  --accent: #d46a00;
+  --accent-dark: #9a4800;
+  --border: #ead7bd;
+  --shadow: 0 20px 50px rgba(79, 45, 10, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #ffe1ae 0, transparent 35%), var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.hero {
+  min-height: 62vh;
+  padding: 24px clamp(20px, 5vw, 72px) 72px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 0;
+  color: var(--muted);
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.nav a:not(.brand):hover {
+  color: var(--accent-dark);
+}
+
+.brand {
+  margin-right: auto;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.hero-content {
+  width: min(820px, 100%);
+  margin-top: auto;
+  padding: 72px 0 24px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent-dark);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  max-width: 760px;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  letter-spacing: -0.075em;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  letter-spacing: -0.05em;
+}
+
+h3 {
+  font-size: 1.45rem;
+}
+
+.intro {
+  max-width: 620px;
+  margin: 24px 0 32px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+
+.button,
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 13px 20px;
+  box-shadow: 0 10px 24px rgba(212, 106, 0, 0.22);
+}
+
+.button:hover,
+.card-link:hover {
+  background: var(--accent-dark);
+}
+
+.section {
+  padding: 56px clamp(20px, 5vw, 72px) 90px;
+}
+
+.section-heading {
+  margin-bottom: 24px;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.recipe-card,
+.recipe-page-card {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-card-content {
+  padding: 26px;
+  flex: 1;
+}
+
+.recipe-card p {
+  color: var(--muted);
+}
+
+.recipe-tag {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--accent-dark) !important;
+}
+
+.recipe-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0 0;
+}
+
+.recipe-meta div,
+.info-box {
+  background: var(--surface-strong);
+  border-radius: 18px;
+  padding: 14px;
+}
+
+dt {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+dd {
+  margin: 2px 0 0;
+  font-weight: 800;
+}
+
+.card-link {
+  margin: 0 26px 26px;
+}
+
+.recipe-hero {
+  padding: 24px clamp(20px, 5vw, 72px) 36px;
+}
+
+.recipe-hero-content {
+  margin-top: 52px;
+  width: min(950px, 100%);
+}
+
+.recipe-hero h1 {
+  font-size: clamp(2.7rem, 8vw, 5.8rem);
+}
+
+.recipe-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.recipe-page-card {
+  padding: clamp(22px, 4vw, 36px);
+}
+
+.recipe-page-card h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  margin-bottom: 16px;
+}
+
+.recipe-page-card ul,
+.recipe-page-card ol {
+  padding-left: 1.2rem;
+}
+
+.recipe-page-card li + li {
+  margin-top: 10px;
+}
+
+.info-box + .info-box {
+  margin-top: 12px;
+}
+
+.warning {
+  border-left: 5px solid var(--accent);
+}
+
+.footer {
+  padding: 32px clamp(20px, 5vw, 72px);
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+.footer code {
+  background: var(--surface-strong);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+@media (max-width: 780px) {
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  .recipe-layout {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    letter-spacing: -0.055em;
+  }
+}
